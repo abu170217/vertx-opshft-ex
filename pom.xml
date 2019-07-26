@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fztech.net</groupId>
+  <artifactId>vertx-opshft-ex</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>vertx-opshft-ex</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <vertx.verticle>com.fzsystems.net.HelloHttpVerticle</vertx.verticle>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+  <dependencies>
+  	<dependency>
+		 <groupId>io.vertx</groupId>
+		 <artifactId>vertx-web</artifactId>
+		 <version>3.8.0</version>
+	</dependency>
+</dependencies>
+   <build>
+    <plugins>
+        
+        <plugin>
+            <groupId>io.reactiverse</groupId>
+            <artifactId>vertx-maven-plugin</artifactId>
+            <version>1.0.20</version>
+            <executions>
+                <execution>
+                    <id>vmp</id>
+                    <goals>
+                        <goal>initialize</goal>
+                        <goal>package</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <redeploy>true</redeploy>
+            </configuration>
+        </plugin>
+        
+    </plugins>
+  </build>
+</project>
